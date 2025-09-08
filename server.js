@@ -28,8 +28,8 @@ app.use(session({
   }
 }));
 
-app.use("/auth", authRoutes);
-app.use("/articles", articlesRoutes)
+app.use("/api/auth", authRoutes);
+app.use("/api/articles", articlesRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
