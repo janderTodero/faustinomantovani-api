@@ -5,4 +5,4 @@ function requireAuth(req, res, next) {
   res.status(401).json({ error: "Não autorizado" });
 }
 
-module.exports = requireAuth;
+module.exports = { requireAuth }

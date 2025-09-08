@@ -5,7 +5,7 @@ const session = require("express-session");
 require("dotenv").config();
 
 const authRoutes = require("./src/routes/authRoutes");
-const requireAuth = require("./src/middlewares/authMiddleware");
+const articlesRoutes = require("./src/routes/articlesRoutes")
 
 const app = express();
 
@@ -29,6 +29,7 @@ app.use(session({
 }));
 
 app.use("/auth", authRoutes);
+app.use("/articles", articlesRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
