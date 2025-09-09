@@ -6,8 +6,11 @@ exports.login = async (req, res) => {
   const isUserValid = username === process.env.ADMIN_USER;
   const isPassValid = await bcrypt.compare(password, process.env.ADMIN_PASS);
 
+  console.log("Tentativa de login:", { username, isUserValid, isPassValid });
+
   if (isUserValid && isPassValid) {
     req.session.user = username;
+    console.log("Sessão criada após login:", req.session); // <-- AQUI
     return res.json({ message: "Login bem-sucedido" });
   }
 
@@ -24,6 +27,7 @@ exports.logout = (req, res) => {
 
 // Checar autenticação
 exports.checkAuth = (req, res) => {
+  console.log("Checagem de autenticação - Sessão:", req.session); // <-- AQUI
   if (req.session.user) {
     return res.json({ authenticated: true, user: req.session.user });
   }
