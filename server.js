@@ -10,7 +10,7 @@ const articlesRoutes = require("./src/routes/articlesRoutes")
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://faustino-mantovani.vercel.app/",
   credentials: true
 }));
 
