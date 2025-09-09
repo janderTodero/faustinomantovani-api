@@ -10,7 +10,7 @@ const articlesRoutes = require("./src/routes/articlesRoutes")
 const app = express();
 
 app.use(cors({
-  origin: "https://faustinomantovani.com.br",
+  origin: "http://localhost:3000",
   credentials: true
 }));
 
@@ -21,8 +21,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    httpOnly: true,
-    secure: true,
+    httpOnly: false,
+    secure: false,
     sameSite: "none",
     maxAge: 1000 * 60 * 60 
   }
