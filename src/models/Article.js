@@ -19,7 +19,11 @@ const articleSchema = new mongoose.Schema(
     url: {
       type: String,
       trim: true
-    }
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    },
   },
   { timestamps: true }
 );
