@@ -10,7 +10,10 @@ const articlesRoutes = require("./src/routes/articlesRoutes")
 const app = express();
 
 app.use(cors({
-  origin: "https://faustinomantovani.com.br",
+  origin: [
+    "https://www.faustinomantovani.com.br",
+    "https://faustinomantovani.com.br"
+  ],
   credentials: true
 }));
 
